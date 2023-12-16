@@ -4,34 +4,37 @@ import { fetchContacts } from "../../redux/operations";
 import ContactsForm from "../ContactsForm";
 import { Container, ContactsSection } from "./App.styled";
 import ContactsList from "components/ContactsList/ContactsList";
-import { selectContacts } from "../../redux/selectors";
+import { selectContacts, selectIsLoading } from "../../redux/selectors";
 import FilterSearch from "components/FilterSearch/FilterSearch";
 
 export default function App() {
-  const { contacts } = useSelector(selectContacts);
+  const contacts = useSelector(selectContacts);
+  const isLoading = useSelector(selectIsLoading);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchContacts());
-    console.log(contacts);
-  }, [dispatch, contacts]);
+  }, [dispatch]);
 
   return (
-    <Container>
-      <h1>Phonebook</h1>
-      <ContactsForm />
+    <>
+      {isLoading && <h1>Loading...</h1>}
+      <Container>
+        <h1>Phonebook</h1>
+        <ContactsForm />
 
-      <ContactsSection>
-        <h2>Contacts</h2>
-        <FilterSearch />
+        <ContactsSection>
+          <h2>Contacts</h2>
+          <FilterSearch />
 
-        {contacts && contacts.length > 0 ? (
-          <ContactsList />
-        ) : (
-          <p>No contacts added yet</p>
-        )}
-      </ContactsSection>
-    </Container>
+          {contacts && contacts.length > 0 ? (
+            <ContactsList />
+          ) : (
+            <p>No contacts added yet</p>
+          )}
+        </ContactsSection>
+      </Container>
+    </>
   );
 }

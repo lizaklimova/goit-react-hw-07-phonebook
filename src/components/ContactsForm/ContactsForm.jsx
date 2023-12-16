@@ -14,7 +14,7 @@ import {
 export default function ContactsForm() {
   const dispatch = useDispatch();
 
-  const { contacts } = useSelector(selectContacts);
+  const contacts = useSelector(selectContacts);
 
   const idName = nanoid();
   const idNumber = nanoid();

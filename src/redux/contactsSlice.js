@@ -1,28 +1,30 @@
-import { createSlice, nanoid } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import { fetchContacts, addContact, deleteContact } from "./operations";
 
-const handlePending = (state) => {
-  state.isLoading = true;
-  state.error = null;
+const handlePending = ({ contacts }) => {
+  contacts.isLoading = true;
+  contacts.error = null;
 };
 
-const handleRejected = (state, { payload }) => {
-  state.isLoading = false;
-  state.error = payload;
+const handleRejected = ({ contacts }, { payload }) => {
+  contacts.isLoading = false;
+  contacts.error = payload;
 };
 
-const handleFulfilled = (state, { payload }) => {
-  state.isLoading = false;
-  state.contacts = payload;
-  state.error = null;
+const handleFulfilled = ({ contacts }, { payload }) => {
+  contacts.isLoading = false;
+  contacts.items = payload;
+  contacts.error = null;
 };
 
 const contactsSlice = createSlice({
   name: "contacts",
   initialState: {
-    contacts: [],
-    isLoading: false,
-    error: null,
+    contacts: {
+      items: [],
+      isLoading: false,
+      error: null,
+    },
   },
 
   reducers: {},
@@ -33,15 +35,20 @@ const contactsSlice = createSlice({
       .addCase(fetchContacts.fulfilled, handleFulfilled)
       .addCase(fetchContacts.rejected, handleRejected)
       .addCase(addContact.pending, handlePending)
-      .addCase(addContact.fulfilled, (state, { payload }) => [
-        ...state.contacts,
-        payload,
-      ])
+      .addCase(addContact.fulfilled, ({ contacts }, { payload }) => {
+        contacts.isLoading = false;
+        contacts.error = null;
+        contacts.items.push(payload);
+      })
       .addCase(addContact.rejected, handleRejected)
       .addCase(deleteContact.pending, handlePending)
-      .addCase(deleteContact.fulfilled, (state, { payload }) =>
-        state.contacts.filter((contact) => contact.id !== payload)
-      )
+      .addCase(deleteContact.fulfilled, ({ contacts }, { payload }) => {
+        contacts.isLoading = false;
+        contacts.error = null;
+        contacts.items = contacts.items.filter(
+          (contact) => contact.id !== payload
+        );
+      })
       .addCase(deleteContact.rejected, handleRejected);
   },
 });

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 export const ContactLi = styled.li`
   display: flex;
   gap: 10px;
@@ -33,7 +33,7 @@ export const ContactDeleteBtn = styled.button`
   }
 `;
 
-export const ContactIcon = styled.span`
+export const ContactIcon = styled.div`
   width: 50px;
   height: 50px;
   display: flex;
@@ -41,5 +41,5 @@ export const ContactIcon = styled.span`
   justify-content: center;
   border-radius: 50%;
   border: 1px solid black;
-  font-weight: 700;
+  background: ${({ $avatar }) => `url(${$avatar}) no-repeat center / cover`};
 `;

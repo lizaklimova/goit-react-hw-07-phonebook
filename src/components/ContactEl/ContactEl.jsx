@@ -11,8 +11,8 @@ import { deleteContact } from "../../redux/operations";
 export default function ContactEl() {
   const dispatch = useDispatch();
 
-  const { contacts } = useSelector(selectContacts);
-  const { filter } = useSelector(selectFilterSearch);
+  const contacts = useSelector(selectContacts);
+  const filter = useSelector(selectFilterSearch);
 
   const filteredContacts = contacts.filter(({ name }) => {
     return name.toLowerCase().trim().includes(filter);
@@ -21,12 +21,10 @@ export default function ContactEl() {
   return (
     <>
       {filteredContacts.length > 0 ? (
-        filteredContacts.map(({ id, name, phone }, i) => (
+        filteredContacts.map(({ id, name, phone, avatar }, i) => (
           <ContactLi key={id}>
             <ContactWrapper>
-              <ContactIcon>
-                {name && name.slice(0, 1).toUpperCase()}
-              </ContactIcon>
+              <ContactIcon $avatar={avatar}></ContactIcon>
               <p>
                 {name}: {phone}
               </p>
