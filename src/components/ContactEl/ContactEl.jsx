@@ -5,8 +5,11 @@ import { deleteContact } from "../../redux/operations";
 import {
   ContactLi,
   ContactWrapper,
+  ContactInfoBlock,
   ContactDeleteBtn,
-  ContactIcon,
+  ContactAvatar,
+  ContactInfoName,
+  ContactInfoTel,
 } from "./ContactEl.styled";
 
 export default function ContactEl() {
@@ -25,10 +28,13 @@ export default function ContactEl() {
         filteredContacts.map(({ id, name, phone, avatar }, i) => (
           <ContactLi key={id}>
             <ContactWrapper>
-              <ContactIcon $avatar={avatar}></ContactIcon>
-              <p>
-                {name}: {phone}
-              </p>
+              <ContactAvatar $avatar={avatar}></ContactAvatar>
+              <ContactInfoBlock>
+                <ContactInfoName>{name}</ContactInfoName>
+                <ContactInfoTel>{phone}</ContactInfoTel>
+
+                <hr />
+              </ContactInfoBlock>
             </ContactWrapper>
             <ContactDeleteBtn
               type="button"

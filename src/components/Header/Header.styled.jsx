@@ -37,4 +37,11 @@ export const Title = styled.h1`
 export const AddBtn = styled.button`
   background-color: transparent;
   border: none;
+  cursor: pointer;
+  transition: transform 300ms ease-in-out, filter 300ms ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(-1px 1px 5px #000);
+  }
 `;

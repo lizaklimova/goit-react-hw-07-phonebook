@@ -23,7 +23,7 @@ export const SearchInput = styled.input`
   border-radius: 15px;
   background-color: #efefef;
   border: none;
-  width: 30%;
+  width: 100%;
 
   &:focus {
     outline: none;

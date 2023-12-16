@@ -1,7 +1,12 @@
 import axios from "axios";
+import { Notify } from "notiflix";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 axios.defaults.baseURL = "https://657d8eff3e3f5b189462bb67.mockapi.io/api";
+
+const notifyError = (message) => {
+  Notify.failure(message);
+};
 
 export const fetchContacts = createAsyncThunk(
   "contacts/getContacts",
@@ -11,6 +16,7 @@ export const fetchContacts = createAsyncThunk(
 
       return data;
     } catch ({ message }) {
+      notifyError(message);
       thunAPI.rejectWithValue(message);
     }
   }
@@ -28,6 +34,7 @@ export const addContact = createAsyncThunk(
 
       return data;
     } catch ({ message }) {
+      notifyError(message);
       thunAPI.rejectWithValue(message);
     }
   }
@@ -41,6 +48,7 @@ export const deleteContact = createAsyncThunk(
 
       return data;
     } catch ({ message }) {
+      notifyError(message);
       thunAPI.rejectWithValue(message);
     }
   }

@@ -8,14 +8,14 @@ import {
   AddBtn,
 } from "./Header.styled";
 
-const Header = () => {
+const Header = ({ openModal }) => {
   return (
     <HeaderPart>
       <StatusBar $bar={statusBarImg}></StatusBar>
       <NavWrapper>
         <IoIosArrowRoundBack size={50} />
         <Title>My Contacts</Title>
-        <AddBtn type="button">
+        <AddBtn type="button" onClick={openModal}>
           <IoMdAdd size={50} />
         </AddBtn>
       </NavWrapper>
