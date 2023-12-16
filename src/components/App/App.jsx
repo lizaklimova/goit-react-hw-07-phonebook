@@ -1,16 +1,15 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchContacts } from "../../redux/operations";
-import ContactsForm from "../ContactsForm";
-import { Container, ContactsSection } from "./App.styled";
+import { Container, Wrapper } from "./App.styled";
 import ContactsList from "components/ContactsList/ContactsList";
-import {
-  selectContacts,
-  selectIsLoading,
-} from "../../redux/contacts/selectors";
-import FilterSearch from "components/FilterSearch/FilterSearch";
+import { selectContacts, selectIsLoading } from "../../redux/selectors";
+import Header from "components/Header/Header";
+import Modal from "components/Modal/Modal";
 
 export default function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const contacts = useSelector(selectContacts);
   const isLoading = useSelector(selectIsLoading);
 
@@ -20,23 +19,41 @@ export default function App() {
     dispatch(fetchContacts());
   }, [dispatch]);
 
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
   return (
     <>
       {isLoading && <h1>Loading...</h1>}
       <Container>
-        <h1>Phonebook</h1>
-        <ContactsForm />
-
-        <ContactsSection>
-          <h2>Contacts</h2>
-          <FilterSearch />
+        <Wrapper>
+          <Header openModal={openModal} />
+          {isModalOpen && <Modal closeModal={closeModal} />}
 
           {contacts.length > 0 ? (
             <ContactsList />
           ) : (
             <p>No contacts added yet</p>
           )}
-        </ContactsSection>
+        </Wrapper>
+
+        {/* <h1>Phonebook</h1>
+        <ContactsForm />
+        <ContactsSection>
+          <h2>Contacts</h2>
+         
+
+          {contacts && contacts.length > 0 ? (
+            <ContactsList />
+          ) : (
+            <p>No contacts added yet</p>
+          )}
+        </ContactsSection> */}
       </Container>
     </>
   );

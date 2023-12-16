@@ -1,12 +1,15 @@
 import { useDispatch, useSelector } from "react-redux";
-import { selectContacts } from "../../redux/contacts/selectors";
-import { selectFilterSearch } from "../../redux/filterSearch/selectors";
+import { AiOutlineDelete } from "react-icons/ai";
+import { selectContacts, selectFilterSearch } from "../../redux/selectors";
 import { deleteContact } from "../../redux/operations";
 import {
   ContactLi,
   ContactWrapper,
+  ContactInfoBlock,
   ContactDeleteBtn,
-  ContactIcon,
+  ContactAvatar,
+  ContactInfoName,
+  ContactInfoTel,
 } from "./ContactEl.styled";
 
 export default function ContactEl() {
@@ -25,16 +28,19 @@ export default function ContactEl() {
         filteredContacts.map(({ id, name, phone, avatar }, i) => (
           <ContactLi key={id}>
             <ContactWrapper>
-              <ContactIcon $avatar={avatar}></ContactIcon>
-              <p>
-                {name}: {phone}
-              </p>
+              <ContactAvatar $avatar={avatar}></ContactAvatar>
+              <ContactInfoBlock>
+                <ContactInfoName>{name}</ContactInfoName>
+                <ContactInfoTel>{phone}</ContactInfoTel>
+
+                <hr />
+              </ContactInfoBlock>
             </ContactWrapper>
             <ContactDeleteBtn
               type="button"
               onClick={() => dispatch(deleteContact(id))}
             >
-              Delete ❌
+              <AiOutlineDelete size={20} />
             </ContactDeleteBtn>
           </ContactLi>
         ))

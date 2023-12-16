@@ -1,10 +1,11 @@
 import { useDispatch } from "react-redux";
-import { filterSearch } from "../../redux/filterSearch/filterSearchSlice";
-import { IoSearchOutline } from "react-icons/io5";
+import { filterSearch } from "../../redux/filterSearchSlice";
+
 import {
   SearchContainer,
+  FilterAndIconWrap,
+  SearchIcon,
   SearchInput,
-  SearchLabel,
 } from "./FilterSearch.styled";
 
 export default function FilterSearch() {
@@ -18,16 +19,15 @@ export default function FilterSearch() {
 
   return (
     <SearchContainer>
-      <SearchLabel htmlFor="searchInput">
-        Search for contacts
-        <IoSearchOutline />
-      </SearchLabel>
-      <SearchInput
-        id="searchInput"
-        type="text"
-        onChange={handleFilterSearch}
-        placeholder="Enter name"
-      />
+      <FilterAndIconWrap>
+        <SearchInput
+          id="searchInput"
+          type="text"
+          onChange={handleFilterSearch}
+          placeholder="Enter name"
+        />
+        <SearchIcon />
+      </FilterAndIconWrap>
     </SearchContainer>
   );
 }
