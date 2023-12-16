@@ -68,3 +68,17 @@ export const ContactDeleteBtn = styled.button`
     transform: scale(1.05);
   }
 `;
+
+export const NoContactsFoundMsg = styled.p`
+  text-align: center;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  span {
+    font-weight: 700;
+    text-decoration: underline;
+  }
+`;

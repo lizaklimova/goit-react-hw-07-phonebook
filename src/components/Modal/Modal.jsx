@@ -9,7 +9,7 @@ const Modal = ({ closeModal }) => {
         <CloseModalBtn type="button" onClick={closeModal}>
           <IoMdClose size={30} />
         </CloseModalBtn>
-        <ContactsForm />
+        <ContactsForm closeModal={closeModal} />
       </ModalWin>
     </ModalBackdrop>
   );

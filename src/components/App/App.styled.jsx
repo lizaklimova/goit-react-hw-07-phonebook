@@ -24,3 +24,12 @@ export const Wrapper = styled.div`
   width: 100%;
   height: auto;
 `;
+
+export const NoContactsMsg = styled.p`
+  text-align: center;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+`;

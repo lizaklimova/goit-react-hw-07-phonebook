@@ -16,20 +16,15 @@ export const ContactsNameInput = styled.input`
   padding: 0.7em 1.4em 0.7em 1.1em;
   border-radius: 20px;
   border: 2px solid #000000;
-  transition: border 300ms ease-in-out;
-
   &:focus {
     outline: none;
     border-color: rgba(20, 167, 62, 1);
   }
 `;
-
 export const ContactsNumberInput = styled.input`
   padding: 0.7em 1.4em 0.7em 1.1em;
   border-radius: 20px;
   border: 2px solid #000000;
-  transition: border 300ms ease-in-out;
-
   &:focus {
     outline: none;
     border: 2px solid rgba(20, 167, 62, 1);
@@ -37,7 +32,7 @@ export const ContactsNumberInput = styled.input`
 `;
 
 export const Label = styled.label`
-  margin-bottom: -10px;
+  padding-left: 10px;
 `;
 
 export const SubmitBtn = styled.button`
@@ -46,28 +41,24 @@ export const SubmitBtn = styled.button`
   align-items: center;
   align-self: center;
   gap: 5px;
-
   font-weight: 700;
   font-size: 16px;
   width: 35%;
-  width: 170px;
-  height: 50px;
-  margin-top: 20px;
+  padding: 0.7em 1.4em 0.7em 1.1em;
+  margin-top: 21px;
   color: white;
   background: linear-gradient(
     0deg,
     rgba(20, 167, 62, 1) 0%,
     rgba(102, 247, 113, 1) 100%
   );
+  border: none;
+  box-shadow: 0 0.7em 1.5em -0.5em #14a73e98;
   letter-spacing: 0.05em;
   border-radius: 20em;
-  box-shadow: 0 0.7em 1.5em -0.5em #14a73e98;
-  cursor: pointer;
-  border: none;
-  transition: box-shadow 300ms ease-in-out;
 
-  &:hover {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
-      rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  &:hover,
+  &:active {
+    box-shadow: 0 0.5em 1.5em -0.5em #14a73e98;
   }
 `;

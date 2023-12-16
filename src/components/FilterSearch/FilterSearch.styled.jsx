@@ -4,6 +4,8 @@ import { IoSearchOutline } from "react-icons/io5";
 export const SearchContainer = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 26px;
 `;
 

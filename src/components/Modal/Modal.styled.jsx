@@ -7,6 +7,7 @@ export const ModalBackdrop = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: rgba(96, 93, 93, 0.444);
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;

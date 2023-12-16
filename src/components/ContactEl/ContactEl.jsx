@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { AiOutlineDelete } from "react-icons/ai";
-import { selectContacts, selectFilterSearch } from "../../redux/selectors";
+import { selectContacts } from "../../redux/contacts/selectors";
+import { selectFilterSearch } from "../../redux/filterSearch/selectors";
 import { deleteContact } from "../../redux/operations";
 import {
   ContactLi,
@@ -10,6 +11,7 @@ import {
   ContactAvatar,
   ContactInfoName,
   ContactInfoTel,
+  NoContactsFoundMsg,
 } from "./ContactEl.styled";
 
 export default function ContactEl() {
@@ -45,7 +47,9 @@ export default function ContactEl() {
           </ContactLi>
         ))
       ) : (
-        <div>No contacts found on filter {filter}</div>
+        <NoContactsFoundMsg>
+          No contacts found on filter<span>{filter}</span>
+        </NoContactsFoundMsg>
       )}
     </>
   );

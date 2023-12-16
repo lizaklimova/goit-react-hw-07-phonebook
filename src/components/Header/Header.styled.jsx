@@ -1,4 +1,13 @@
-import { styled } from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const addContactAnimation = keyframes`
+  0% {
+    transform: scale(0.7);
+  }
+    100% {
+    transform: scale(1.2);
+  }
+`;
 
 export const HeaderPart = styled.div`
   width: 100%;
@@ -39,6 +48,7 @@ export const AddBtn = styled.button`
   border: none;
   cursor: pointer;
   transition: transform 300ms ease-in-out, filter 300ms ease-in-out;
+  animation: ${addContactAnimation} 3s linear 1s infinite;
 
   &:hover {
     transform: scale(1.1);

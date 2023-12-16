@@ -11,7 +11,7 @@ import {
   SubmitBtn,
 } from "./ContactsForm.styled";
 
-export default function ContactsForm() {
+export default function ContactsForm({ closeModal }) {
   const dispatch = useDispatch();
 
   const contacts = useSelector(selectContacts);
@@ -28,6 +28,7 @@ export default function ContactsForm() {
       ? Notify.info(`Number ${number.value} already exists`)
       : dispatch(addContact({ name: name.value, phone: number.value }));
 
+    closeModal();
     e.currentTarget.reset();
   };
 
