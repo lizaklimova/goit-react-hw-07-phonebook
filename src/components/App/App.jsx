@@ -35,7 +35,7 @@ export default function App() {
           <Header openModal={openModal} />
           {isModalOpen && <Modal closeModal={closeModal} />}
 
-          {contacts && contacts.length > 0 ? (
+          {contacts.length > 0 ? (
             <ContactsList />
           ) : (
             <p>No contacts added yet</p>

@@ -10,21 +10,21 @@ const notifyError = (message) => {
 
 export const fetchContacts = createAsyncThunk(
   "contacts/getContacts",
-  async (_, thunAPI) => {
+  async (_, thunkAPI) => {
     try {
       const { data } = await axios.get("/contacts");
 
       return data;
     } catch ({ message }) {
       notifyError(message);
-      thunAPI.rejectWithValue(message);
+      thunkAPI.rejectWithValue(message);
     }
   }
 );
 
 export const addContact = createAsyncThunk(
   "contacts/addContact",
-  async (newContact, thunAPI) => {
+  async (newContact, thunkAPI) => {
     try {
       const { data } = await axios.post("/contacts", newContact, {
         headers: {
@@ -35,21 +35,21 @@ export const addContact = createAsyncThunk(
       return data;
     } catch ({ message }) {
       notifyError(message);
-      thunAPI.rejectWithValue(message);
+      thunkAPI.rejectWithValue(message);
     }
   }
 );
 
 export const deleteContact = createAsyncThunk(
   "contacts/deleteContacts",
-  async (id, thunAPI) => {
+  async (id, thunkAPI) => {
     try {
       const { data } = await axios.delete(`/contacts/${id}`);
 
       return data;
     } catch ({ message }) {
       notifyError(message);
-      thunAPI.rejectWithValue(message);
+      thunkAPI.rejectWithValue(message);
     }
   }
 );
