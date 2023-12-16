@@ -1,12 +1,13 @@
 import { useDispatch, useSelector } from "react-redux";
+import { AiOutlineDelete } from "react-icons/ai";
+import { selectContacts, selectFilterSearch } from "../../redux/selectors";
+import { deleteContact } from "../../redux/operations";
 import {
   ContactLi,
   ContactWrapper,
   ContactDeleteBtn,
   ContactIcon,
 } from "./ContactEl.styled";
-import { selectContacts, selectFilterSearch } from "../../redux/selectors";
-import { deleteContact } from "../../redux/operations";
 
 export default function ContactEl() {
   const dispatch = useDispatch();
@@ -33,7 +34,7 @@ export default function ContactEl() {
               type="button"
               onClick={() => dispatch(deleteContact(id))}
             >
-              Delete ❌
+              <AiOutlineDelete size={20} />
             </ContactDeleteBtn>
           </ContactLi>
         ))

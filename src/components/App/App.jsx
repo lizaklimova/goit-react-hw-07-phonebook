@@ -6,6 +6,7 @@ import { Container, ContactsSection } from "./App.styled";
 import ContactsList from "components/ContactsList/ContactsList";
 import { selectContacts, selectIsLoading } from "../../redux/selectors";
 import FilterSearch from "components/FilterSearch/FilterSearch";
+import Header from "components/Header/Header";
 
 export default function App() {
   const contacts = useSelector(selectContacts);
@@ -21,19 +22,28 @@ export default function App() {
     <>
       {isLoading && <h1>Loading...</h1>}
       <Container>
-        <h1>Phonebook</h1>
-        <ContactsForm />
-
+        <Header />
+        <FilterSearch />
         <ContactsSection>
-          <h2>Contacts</h2>
-          <FilterSearch />
-
           {contacts && contacts.length > 0 ? (
             <ContactsList />
           ) : (
             <p>No contacts added yet</p>
           )}
         </ContactsSection>
+
+        {/* <h1>Phonebook</h1>
+        <ContactsForm />
+        <ContactsSection>
+          <h2>Contacts</h2>
+         
+
+          {contacts && contacts.length > 0 ? (
+            <ContactsList />
+          ) : (
+            <p>No contacts added yet</p>
+          )}
+        </ContactsSection> */}
       </Container>
     </>
   );

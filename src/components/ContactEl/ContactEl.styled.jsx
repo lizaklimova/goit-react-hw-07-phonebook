@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 export const ContactLi = styled.li`
   display: flex;
   gap: 10px;
@@ -20,9 +21,8 @@ export const ContactDeleteBtn = styled.button`
   border: none;
   outline: none;
   background-color: #080808;
-  padding: 10px 20px;
-  font-size: 12px;
-  font-weight: 700;
+  padding: 10px;
+
   color: #fff;
   border-radius: 15px;
   cursor: pointer;
