@@ -2,7 +2,7 @@ import { Notify } from "notiflix/build/notiflix-notify-aio";
 import { nanoid } from "@reduxjs/toolkit";
 import { useDispatch, useSelector } from "react-redux";
 import { addContact } from "../../redux/operations";
-import { selectContacts } from "../../redux/selectors";
+import { selectContacts } from "../../redux/contacts/selectors";
 import {
   ContactsFormEl,
   ContactsNameInput,

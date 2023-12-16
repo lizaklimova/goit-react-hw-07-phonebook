@@ -4,7 +4,10 @@ import { fetchContacts } from "../../redux/operations";
 import ContactsForm from "../ContactsForm";
 import { Container, ContactsSection } from "./App.styled";
 import ContactsList from "components/ContactsList/ContactsList";
-import { selectContacts, selectIsLoading } from "../../redux/selectors";
+import {
+  selectContacts,
+  selectIsLoading,
+} from "../../redux/contacts/selectors";
 import FilterSearch from "components/FilterSearch/FilterSearch";
 
 export default function App() {
