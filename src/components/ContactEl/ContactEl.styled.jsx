@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { AiOutlineDelete } from "react-icons/ai";
+import { RiDeleteBinLine } from "react-icons/ri";
 
 export const ContactLi = styled.li`
   position: relative;
@@ -85,9 +85,9 @@ export const ContactDeleteBtn = styled.button`
   }
 `;
 
-export const DeleteIcon = styled(AiOutlineDelete)`
-  width: 20px;
-  height: 20px;
+export const DeleteIcon = styled(RiDeleteBinLine)`
+  width: 40px;
+  height: 40px;
 `;
 
 export const NoContactsFoundMsg = styled.p`
