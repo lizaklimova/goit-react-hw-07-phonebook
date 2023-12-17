@@ -9,7 +9,7 @@ const Modal = ({ closeModal }) => {
       <Container>
         <ModalWin>
           <CloseModalBtn type="button" onClick={closeModal}>
-            <IoMdClose size={30} />
+            <IoMdClose size={30} color={"black"} />
           </CloseModalBtn>
           <ContactsForm closeModal={closeModal} />
         </ModalWin>

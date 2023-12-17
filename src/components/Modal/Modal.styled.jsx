@@ -1,5 +1,4 @@
 import { styled } from "styled-components";
-import { IoMdClose } from "react-icons/io";
 
 export const ModalBackdrop = styled.div`
   position: fixed;
@@ -42,10 +41,4 @@ export const CloseModalBtn = styled.button`
     transform: scale(1.1);
     filter: drop-shadow(-1px 1px 5px #000);
   }
-`;
-
-export const CloseIcon = styled(IoMdClose)`
-  width: 50px;
-  height: 50px;
-  stroke: black;
 `;
