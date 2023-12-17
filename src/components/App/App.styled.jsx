@@ -8,6 +8,7 @@ export const Container = styled.div`
   align-items: center;
   margin: 0 auto;
   max-width: 100%;
+  height: 100vh;
 
   @media screen and (min-width: 428px) {
     max-width: 500px;
@@ -19,10 +20,30 @@ export const Container = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  border: 1px solid black;
+  position: relative;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   border-radius: 30px;
   width: 100%;
-  height: auto;
+  height: 100%;
+  overflow: hidden;
+
+  &::after {
+    position: absolute;
+    right: 50%;
+    bottom: 5px;
+    transform: translateX(50%);
+    content: "";
+    display: block;
+    width: 134px;
+    height: 5px;
+    background-color: #000;
+    border-radius: 100px;
+
+    @media screen and (min-width: 768px) {
+      width: 174px;
+    }
+  }
 `;
 
 export const NoContactsMsg = styled.p`

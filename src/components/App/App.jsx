@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { MdOutlineSearchOff } from "react-icons/md";
 import { fetchContacts } from "../../redux/operations";
-import ContactsList from "components/ContactsList/ContactsList";
+import ContactsList from "components/ContactsList";
 import {
   selectContacts,
   selectIsLoading,
 } from "../../redux/contacts/selectors.js";
-import Header from "components/Header/Header";
-import Modal from "components/Modal/Modal";
-import { MdOutlineSearchOff } from "react-icons/md";
+import Loader from "components/Loader";
+import Header from "components/Header";
+import Modal from "components/Modal";
+import FilterSearch from "components/FilterSearch";
 import { Container, Wrapper, NoContactsMsg } from "./App.styled";
-import FilterSearch from "components/FilterSearch/FilterSearch";
 
 export default function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -34,15 +35,14 @@ export default function App() {
 
   return (
     <>
-      {isLoading && <h1>Loading...</h1>}
       <Container>
         <Wrapper>
           <Header openModal={openModal} />
           {isModalOpen && <Modal closeModal={closeModal} />}
-
           <FilterSearch />
-
-          {contacts.length > 0 ? (
+          {isLoading ? (
+            <Loader />
+          ) : contacts && contacts.length > 0 ? (
             <ContactsList />
           ) : (
             <NoContactsMsg>

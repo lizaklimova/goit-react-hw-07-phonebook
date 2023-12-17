@@ -25,7 +25,7 @@ export const SearchInput = styled.input`
   border-radius: 15px;
   background-color: #efefef;
   border: none;
-  width: 100%;
+  width: 235px;
 
   &:focus {
     outline: none;
@@ -38,6 +38,6 @@ export const SearchInput = styled.input`
     letter-spacing: -0.408px;
   }
   @media screen and (min-width: 768px) {
-    width: 235px;
+    width: 335px;
   }
 `;

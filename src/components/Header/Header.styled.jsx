@@ -3,9 +3,11 @@ import styled, { keyframes } from "styled-components";
 const addContactAnimation = keyframes`
   0% {
     transform: scale(0.7);
+     filter: drop-shadow(-1px 3px 4px #4e4d4d);
   }
     100% {
     transform: scale(1.2);
+     filter: drop-shadow(-1px 3px 10px #000000);
   }
 `;
 
@@ -17,7 +19,8 @@ export const HeaderPart = styled.div`
   flex-direction: column;
   background: ${({ $bar }) => `url(${$bar}) no-repeat center / cover`};
   background-color: #f6f6f6;
-  border-radius: 30px;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
   margin-bottom: 16px;
 `;
 
@@ -50,8 +53,7 @@ export const AddBtn = styled.button`
   transition: transform 300ms ease-in-out, filter 300ms ease-in-out;
   animation: ${addContactAnimation} 3s linear 1s infinite;
 
-  &:hover {
-    transform: scale(1.1);
-    filter: drop-shadow(-1px 1px 5px #000);
+  &:focus {
+    outline: none;
   }
 `;

@@ -1,11 +1,11 @@
 import axios from "axios";
-import { Notify } from "notiflix";
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { error } from "notifications/notiflixInit";
 
 axios.defaults.baseURL = "https://657d8eff3e3f5b189462bb67.mockapi.io/api";
 
 const notifyError = (message) => {
-  Notify.failure(message);
+  error(message);
 };
 
 export const fetchContacts = createAsyncThunk(

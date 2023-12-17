@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const ContactLi = styled.li`
+  position: relative;
   display: flex;
   gap: 10px;
   align-items: center;
@@ -9,9 +10,23 @@ export const ContactLi = styled.li`
   margin-bottom: 5px;
   width: 100%;
 
-  hr {
-    margin: 0;
-    width: 300px;
+  &::after {
+    position: absolute;
+    bottom: 0;
+    right: 40px;
+
+    content: "";
+    display: block;
+    width: 340px;
+    height: 1px;
+    background-color: #b9b9b9;
+    border-radius: 50px;
+  }
+
+  @media screen and (min-width: 768px) {
+    &::after {
+      width: 440px;
+    }
   }
 `;
 

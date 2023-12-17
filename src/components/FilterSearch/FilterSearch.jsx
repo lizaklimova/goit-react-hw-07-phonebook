@@ -1,6 +1,5 @@
 import { useDispatch } from "react-redux";
 import { filterSearch } from "../../redux/filterSearch/filterSearchSlice";
-
 import {
   SearchContainer,
   FilterAndIconWrap,

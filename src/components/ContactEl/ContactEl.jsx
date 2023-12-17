@@ -34,8 +34,6 @@ export default function ContactEl() {
               <ContactInfoBlock>
                 <ContactInfoName>{name}</ContactInfoName>
                 <ContactInfoTel>{phone}</ContactInfoTel>
-
-                <hr />
               </ContactInfoBlock>
             </ContactWrapper>
             <ContactDeleteBtn

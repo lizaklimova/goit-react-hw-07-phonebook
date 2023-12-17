@@ -17,17 +17,14 @@ export const ModalWin = styled.div`
   position: relative;
   background-color: #fff;
   padding: 45px;
-  width: 100%;
+  width: 175%;
   border-radius: 15px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-
-  @media screen and (min-width: 428px) {
-    width: 500px;
-  }
+  z-index: 2;
 
   @media screen and (min-width: 768px) {
-    width: 600px;
+    width: 100%;
   }
 `;
 
@@ -38,7 +35,6 @@ export const CloseModalBtn = styled.button`
   cursor: pointer;
   border: none;
   background-color: transparent;
-
   transition: transform 300ms ease-in-out, filter 300ms ease-in-out;
 
   &:hover {
