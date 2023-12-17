@@ -1,11 +1,12 @@
 import statusBarImg from "../../img/status-bar.png";
-import { IoIosArrowRoundBack, IoMdAdd } from "react-icons/io";
+import { IoIosArrowRoundBack } from "react-icons/io";
 import {
   HeaderPart,
   StatusBar,
   NavWrapper,
   Title,
   AddBtn,
+  AddIcon,
 } from "./Header.styled";
 
 const Header = ({ openModal }) => {
@@ -16,7 +17,7 @@ const Header = ({ openModal }) => {
         <IoIosArrowRoundBack size={50} />
         <Title>My Contacts</Title>
         <AddBtn type="button" onClick={openModal}>
-          <IoMdAdd size={50} />
+          <AddIcon />
         </AddBtn>
       </NavWrapper>
     </HeaderPart>

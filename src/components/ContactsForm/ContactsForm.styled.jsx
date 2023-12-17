@@ -50,7 +50,7 @@ export const SubmitBtn = styled.button`
   gap: 5px;
   font-weight: 700;
   font-size: 16px;
-  width: 45%;
+  width: 65%;
   padding: 0.7em 1.4em 0.7em 1.1em;
   margin-top: 21px;
   color: white;
@@ -70,6 +70,10 @@ export const SubmitBtn = styled.button`
   &:active {
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
       rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  }
+
+  @media screen and (min-width: 428px) {
+    /* width: 175%; */
   }
 
   @media screen and (min-width: 768px) {

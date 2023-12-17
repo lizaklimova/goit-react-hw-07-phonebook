@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { AiOutlineDelete } from "react-icons/ai";
 
 export const ContactLi = styled.li`
   position: relative;
@@ -82,6 +83,11 @@ export const ContactDeleteBtn = styled.button`
   &:hover {
     transform: scale(1.05);
   }
+`;
+
+export const DeleteIcon = styled(AiOutlineDelete)`
+  width: 20px;
+  height: 20px;
 `;
 
 export const NoContactsFoundMsg = styled.p`

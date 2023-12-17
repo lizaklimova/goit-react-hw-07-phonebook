@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import { IoMdAdd } from "react-icons/io";
 
 const addContactAnimation = keyframes`
   0% {
@@ -56,4 +57,10 @@ export const AddBtn = styled.button`
   &:focus {
     outline: none;
   }
+`;
+
+export const AddIcon = styled(IoMdAdd)`
+  width: 50px;
+  height: 50px;
+  fill: black;
 `;

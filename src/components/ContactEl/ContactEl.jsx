@@ -1,5 +1,4 @@
 import { useDispatch, useSelector } from "react-redux";
-import { AiOutlineDelete } from "react-icons/ai";
 import { selectContacts } from "../../redux/contacts/selectors";
 import { selectFilterSearch } from "../../redux/filterSearch/selectors";
 import { deleteContact } from "../../redux/operations";
@@ -8,6 +7,7 @@ import {
   ContactWrapper,
   ContactInfoBlock,
   ContactDeleteBtn,
+  DeleteIcon,
   ContactAvatar,
   ContactInfoName,
   ContactInfoTel,
@@ -40,7 +40,7 @@ export default function ContactEl() {
               type="button"
               onClick={() => dispatch(deleteContact(id))}
             >
-              <AiOutlineDelete size={20} />
+              <DeleteIcon />
             </ContactDeleteBtn>
           </ContactLi>
         ))
