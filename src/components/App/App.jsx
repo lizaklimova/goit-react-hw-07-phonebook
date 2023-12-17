@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { MdOutlineSearchOff } from "react-icons/md";
-import { fetchContacts } from "../../redux/operations";
+import { fetchContacts } from "../../redux/contacts/operations";
 import ContactsList from "components/ContactsList";
 import {
   selectContacts,

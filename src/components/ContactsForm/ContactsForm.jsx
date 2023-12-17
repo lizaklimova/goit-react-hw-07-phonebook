@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { nanoid } from "@reduxjs/toolkit";
 import { useDispatch, useSelector } from "react-redux";
 import { info } from "notifications/notiflixInit";
-import { addContact } from "../../redux/operations";
+import { addContact } from "../../redux/contacts/operations";
 import { selectContacts } from "../../redux/contacts/selectors";
 import {
   ContactsFormEl,

@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { selectContacts } from "../../redux/contacts/selectors";
 import { selectFilterSearch } from "../../redux/filterSearch/selectors";
-import { deleteContact } from "../../redux/operations";
+import { deleteContact } from "../../redux/contacts/operations";
 import {
   ContactLi,
   ContactWrapper,
