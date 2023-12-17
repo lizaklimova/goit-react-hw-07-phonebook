@@ -86,8 +86,8 @@ export const ContactDeleteBtn = styled.button`
 `;
 
 export const DeleteIcon = styled(RiDeleteBinLine)`
-  width: 40px;
-  height: 40px;
+  width: 100%;
+  height: 100%;
 `;
 
 export const NoContactsFoundMsg = styled.p`

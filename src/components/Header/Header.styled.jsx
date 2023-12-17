@@ -7,7 +7,7 @@ const addContactAnimation = keyframes`
      filter: drop-shadow(-1px 3px 4px #4e4d4d);
   }
     100% {
-    transform: scale(1.2);
+    transform: scale(1.1);
      filter: drop-shadow(-1px 3px 10px #000000);
   }
 `;

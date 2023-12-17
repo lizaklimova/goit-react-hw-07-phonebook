@@ -18,11 +18,11 @@ export const ModalWin = styled.div`
   position: relative;
   background-color: #fff;
   padding: 45px;
-  width: 140%;
+  width: 150%;
   border-radius: 15px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-  z-index: 2;
+  z-index: 3;
 
   @media screen and (min-width: 768px) {
     width: 100%;
