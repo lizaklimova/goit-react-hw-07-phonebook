@@ -24,7 +24,7 @@ export const ModalWin = styled.div`
   z-index: 3;
 
   @media screen and (min-width: 768px) {
-    width: 100%;
+    width: 160%;
   }
 `;
 

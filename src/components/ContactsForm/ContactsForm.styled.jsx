@@ -9,7 +9,7 @@ export const ContactsFormEl = styled.form`
   width: 100%;
 
   @media screen and (min-width: 768px) {
-    width: 500px;
+    width: 100%;
   }
 `;
 
@@ -72,11 +72,7 @@ export const SubmitBtn = styled.button`
       rgba(0, 0, 0, 0.22) 0px 15px 12px;
   }
 
-  @media screen and (min-width: 428px) {
-    /* width: 175%; */
-  }
-
   @media screen and (min-width: 768px) {
-    width: 35%;
+    width: 55%;
   }
 `;
