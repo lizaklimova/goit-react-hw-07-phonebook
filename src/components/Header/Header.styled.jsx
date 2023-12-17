@@ -18,7 +18,6 @@ export const HeaderPart = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  background: ${({ $bar }) => `url(${$bar}) no-repeat center / cover`};
   background-color: #f6f6f6;
   border-top-right-radius: 30px;
   border-top-left-radius: 30px;
@@ -28,9 +27,13 @@ export const HeaderPart = styled.div`
 export const StatusBar = styled.div`
   width: 100%;
   height: 50px;
-  background: ${({ $bar }) => `url(${$bar}) no-repeat center / cover`};
+  background: ${({ $bar }) => `url(${$bar}) no-repeat center / contain`};
   display: flex;
   justify-content: center;
+
+  @media screen and (min-width: 428px) {
+    background-size: cover;
+  }
 `;
 
 export const NavWrapper = styled.div`
